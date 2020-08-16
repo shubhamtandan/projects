@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>HELLO {{name}}</h1>
+
+<!--http://127.0.0.1:8000/add?csrfmiddlewaretoken=rf1v0PZCXI4LQKTRnvXcHLmXlrLpJskPGMYHomJ8Lq4fBk9ptWR9ryWEZIodcSmv&num1=2223&num2=221 -->
+<form action="add" method="get">
+  {% csrf_token %} ENter 1st number : <input type="text" name="num1" /><br />
+
+  ENter 2nd number : <input type="text" name="num2" /><br />
+
+  <input type="submit" />
+</form>
+<!--http://127.0.0.1:8000/add  -->
+<!-- <form action="add" method="POST">
+    {% csrf_token %}
+    ENter 1st number : <input type="text" name="num1" ><br>
+
+    ENter 2nd number : <input type="text" name="num2" ><br>
+
+    <input type="submit">
+</form> -->
+
+{% endblock %}
